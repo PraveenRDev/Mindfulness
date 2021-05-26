@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+/* general reset*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* set body styling */
+body {
+	background: #336f86 url('./images/calm_sea.jpg') no-repeat center center/cover;
+	color: #fff;
+	min-height: 100vh; /* use full screen */
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	font-family: 'Nunito', sans-serif;
+	font-size: 62.5%;
+}
+
+/* Background for each different mode/sessions */
+.relax-bg {
+	background: #336f86 url('./images/calm_sea.jpg') no-repeat center center/cover;
+}
+.focus-bg {
+	background: #86336a url('./images/mount_peak.jpg') no-repeat center center/cover;
+}
+.restore-bg {
+	background: #448633 url('./images/green_waterfall.jpg') no-repeat center center/cover;
+}
+
+.breathe-mode-container {
+	margin-top: 3em;
+	padding: 2em;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 3em;
+	display: flex;
+	width: fit-content;
+	justify-content: space-evenly;
+}
+
+.breathe-mode {
+	margin-left: 20px;
+	letter-spacing: 0.2em;
+	font-size: 1.4em;
+}
+
+.app-wrapper {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-width: 70%;
+}
+
+.app-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	height: 30em;
+	width: 30em;
+	position: relative;
+	transform: scale(1);
+}
+
+/* bubble */
+.bubble {
+	background-color: #05213b;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+#guidance-text {
+	font-size: 2em;
+	text-transform: lowercase;
+	font-weight: 300;
+	letter-spacing: 0.2em;
+}
+
+/* outer bubble gradient and variants for each mode/session */
+.outer-bubble {
+	background: conic-gradient(#4069f0 0%, #5488eb 40%, #ace7ff 40%, #c4eeff 60%, #104eb1 60%, #20318d 100%);
+	height: 32em;
+	width: 32em;
+	z-index: -2;
+	border-radius: 50%;
+	position: absolute;
+	top: -1em;
+	left: -1em;
+}
+
+.outer-bubble.focus {
+	background: conic-gradient(#ff1a1a 0%, #f34121 45%, #ffd5ca 45%, #fdcfce 55%, #b1102b 55%, #db0f0ff3 100%);
+}
+
+.outer-bubble.relax {
+	background: conic-gradient(#4069f0 0%, #5488eb 40%, #ace7ff 40%, #c4eeff 60%, #104eb1 60%, #20318d 100%);
+}
+
+.outer-bubble.restore {
+	background: conic-gradient(#5efb78 0%, #97fa70 35%, #f5fff1 35%, #ebf6e2 65%, #07bb52 65%, #059736 100%);
+}
+
+footer {
+	padding: 2em;
+	letter-spacing: 0.1em;
+	font-size: 1.4em;
+}
+/* small circle around bubble that represents breathe */
+.breathe {
+	background-color: #fff;
+	border-radius: 50%;
+	height: 2em;
+	width: 2em;
+	display: block;
+}
+
+.breathe-container {
+	position: absolute;
+	top: -4em;
+	left: 14em;
+	width: 2em;
+	height: 19em;
+	transform-origin: bottom center;
+}
+
+.btn-action {
+	padding: 0.8em 2.5em;
+	border: none;
+	outline: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 3em;
+	color: #fff;
+	font-size: 1.6em;
+	letter-spacing: 0.1em;
+	font-weight: 700;
+}
+
+.btn-action:hover {
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+}
+
+/* stat modal */
+.modal {
+	/* the outer overlay of stats model */
+	display: none; /* set hidden by default */
+	position: fixed;
+	z-index: 5;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* modal content's styling  */
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: #3d9ef8;
+	-webkit-box-shadow: 0px 1px 16px 5px rgba(0, 0, 0, 0.23);
+	box-shadow: 0px 1px 16px 5px rgba(0, 0, 0, 0.23);
+	margin: 12% auto;
+	padding: 20px;
+	width: 60%;
+	height: 60%;
+	letter-spacing: 0.2em;
+	font-size: 1.6em;
+	padding: 2em 4em;
+	text-align: center;
+	border-radius: 5em;
+	max-width: 50em;
+}
+
+.stat-title {
+	font-size: 2.5em;
+}
+
+.stat-message {
+	font-size: 1.2em;
+	padding-bottom: 1em;
+	border-bottom: 2px solid;
+}
+
+.stat {
+	font-size: 1.1em;
+}
+/* style to stop animation  */
+.stop-animation {
+	animation: unset;
+}
+
+/* classes for animations  */
+.breathe-container.rotate {
+	animation: rotate 10s linear forwards infinite;
+}
+
+.app-container.shrink.relax {
+	animation: shrink 4s linear forwards;
+}
+
+.app-container.grow.relax {
+	animation: grow 4s linear forwards;
+}
+
+.app-container.shrink.focus {
+	animation: shrink 4.5s linear forwards;
+}
+
+.app-container.grow.focus {
+	animation: grow 4.5s linear forwards;
+}
+
+.app-container.shrink.restore {
+	animation: shrink 3.5s linear forwards;
+}
+
+.app-container.grow.restore {
+	animation: grow 3.5s linear forwards;
+}
+
+/*animation keyframes*/
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes grow {
+	from {
+		transform: scale(1);
+	}
+
+	to {
+		transform: scale(1.2);
+	}
+}
+
+@keyframes shrink {
+	from {
+		transform: scale(1.2);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/script.js"></script>
+    <title>Mindfulness</title>
+</head>
+
+<body>
+    <!-- Modal to show statistics about the breathe session -->
+    <div id="statsModal" class="modal">
+        <div class="modal-content" id="modelContent">
+            <div class="stat-title">Great Job!</div>
+            <p class="stat-message" id="statMsg"></p>
+            <p class="stat">Breathe Session: <span id="sessionName"></span></p>
+            <p class="stat">Session Duration: <span id="sessionDuration"></span></p>
+            <p class="stat">Completed Breathe Cycles: <span id="sessionCycles"></span></p>
+            <p>(click outside to exit stats)</p>
+        </div>
+    </div>
+    <div class="app-wrapper">
+        <!-- Radio container that change the breathe session mode -->
+        <div class="breathe-mode-container">
+            <div class="breathe-mode">
+                <input type="radio" name="breathe-mode" id="relax" value="1" checked>
+                <label for="relax">Relax</label>
+            </div>
+            <div class="breathe-mode">
+                <input type="radio" name="breathe-mode" id="focus" value="2">
+                <label for="focus">Focus</label>
+            </div>
+            <div class="breathe-mode">
+                <input type="radio" name="breathe-mode" id="restore" value="3">
+                <label for="restore">Restore</label>
+            </div>
+        </div>
+        <!-- App:- Breathe bubble -->
+            <div class="app-container" id="app-container">
+                <!-- bubble circle -->
+                <div class="bubble"></div>
+                <!-- guidance text-->
+                <p id="guidance-text"></p>
+                <div class="breathe-container" id="breathe-container">
+                    <!-- small circle representing breathe -->
+                    <span class="breathe"></span>
+                </div>
+                <!-- outer gradient of bubble circle -->
+                <div class="outer-bubble" id="outer-bubble"></div>
+            </div>
+            <!-- action button -->
+            <Button class="btn-action" id="btn-action">Start</Button>
+    </div>
+    <!-- footer -->
+    <footer>Created By Praveen 2020</footer>
+</body>
+
+</html>
